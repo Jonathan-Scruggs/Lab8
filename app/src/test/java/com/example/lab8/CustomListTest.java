@@ -44,6 +44,23 @@ public class CustomListTest {
         assertFalse(list.hasCity(city2));
 
     }
+    @Test
+    void testDeleteCity(){
+        CustomList cityList = MockCityList();
+        City city1 = new City("Yellowknife", "Northwest Territories");
+        cityList.addCity(city1);
 
+        // Case of Removing a City from the list
+        cityList.delete(city1);
+        assertFalse(cityList.hasCity(city1)); // Making sure that city is no longer in the list
+
+
+        // Case of Throwing an Exception since we are trying to remove a City that is not a part of the list.
+        City city2 = new City("Charlottetown", "Prince Edward Island");
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city2);
+        });
+
+    }
 
 }
