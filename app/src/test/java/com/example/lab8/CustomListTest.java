@@ -62,5 +62,15 @@ public class CustomListTest {
         });
 
     }
+    @Test
+    void testGetNumberOfCities(){
+        CustomList cityList = MockCityList();
+        City city1 = new City("Yellowknife", "Northwest Territories");
+        cityList.addCity(city1);
+        City city2 = new City("Charlottetown", "Prince Edward Island");
+        cityList.addCity(city2);
+        assertEquals(3,cityList.getNumberOfCities());
+
+    }
 
 }
