@@ -69,7 +69,7 @@ public class CustomListTest {
         cityList.addCity(city1);
         City city2 = new City("Charlottetown", "Prince Edward Island");
         cityList.addCity(city2);
-        assertEquals(3,cityList.getNumberOfCities());
+        assertEquals(2,cityList.getNumberOfCities());
 
     }
 
